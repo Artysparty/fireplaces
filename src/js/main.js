@@ -66,6 +66,8 @@ const modalTrigger5 = document.getElementsByClassName("trigger")[4];
 const modalTrigger6 = document.getElementsByClassName("trigger")[5];
 const modalTrigger7 = document.getElementsByClassName("trigger")[6];
 
+const orderTriggersHtmlCollection = document.getElementsByClassName("orderTrigger");
+const orderTriggers = Array.prototype.slice.call(orderTriggersHtmlCollection)
 
 // получаем ширину отображенного содержимого и толщину ползунка прокрутки
 const windowInnerWidth = document.documentElement.clientWidth;
@@ -80,6 +82,7 @@ const modalBackground4 = document.getElementsByClassName("modalBackground")[3];
 const modalBackground5 = document.getElementsByClassName("modalBackground")[4];
 const modalBackground6 = document.getElementsByClassName("modalBackground")[5];
 const modalBackground7 = document.getElementsByClassName("modalBackground")[6];
+const modalBackground8 = document.getElementsByClassName("modalBackground")[7];
 
 const modalClose1 = document.getElementsByClassName("modalClose")[0];
 const modalClose2 = document.getElementsByClassName("modalClose")[1];
@@ -88,6 +91,30 @@ const modalClose4 = document.getElementsByClassName("modalClose")[3];
 const modalClose5 = document.getElementsByClassName("modalClose")[4];
 const modalClose6 = document.getElementsByClassName("modalClose")[5];
 const modalClose7 = document.getElementsByClassName("modalClose")[6];
+const modalClose8 = document.getElementsByClassName("modalClose")[7];
+
+orderTriggers.forEach(element => {
+  element.addEventListener("click", function () {
+    modalBackground8.style.display = "block";
+    if (windowInnerWidth >= 1366) {
+        bodyMargin();
+    }
+  })
+});
+modalClose8.addEventListener("click", function () {
+  modalBackground8.style.display = "none";
+  if (windowInnerWidth >= 1366) {
+      bodyMargin();
+  }
+});
+modalBackground8.addEventListener("click", function (event) {
+  if (event.target === modalBackground8) {
+      modalBackground8.style.display = "none";
+      if (windowInnerWidth >= 1366) {
+          bodyMargin();
+      }
+  }
+});
 // const modalActive = document.getElementsByClassName("modalActive")[0];
 
 function bodyMargin() {

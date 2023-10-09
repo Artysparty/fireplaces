@@ -545,6 +545,45 @@
 			</div>
 		</div>
 
+		<div class="modalBackground">
+			<div class="modalActive p-5 md:p-10">
+				<div class="modalClose">
+					<img src="./public/icons/modalCross.svg" />
+				</div>
+				<div class="modalWindow" id="orederModal">
+					<div class="flex flex-col md:px-10">
+						<span class="text-3xl font-bold mb-5 text-center">Форма заказа</span>
+
+						<span class="text-xl font-semibold mb-2 text-center">Контактная информация</span>
+	
+						<label for="fullName" class="text-xs font-medium text-gray-300 w-100 md:w-2/3 self-center">ФИО</label>
+						<input id="fullName" type="text" placeholder="Иванов Иван" class="mb-2 outline outline-2 outline-gray-200 rounded-sm px-3 py-2 self-center w-full md:w-2/3" required>
+	
+						<label for="phoneNumber" class="text-xs font-medium text-gray-300 w-100 md:w-2/3 self-center">Номер телефона</label>
+						<input id="phoneNumber" type="text" placeholder="+7-999-999-99-99" class="mb-2 outline outline-2 outline-gray-200 rounded-sm px-3 py-2 self-center w-full md:w-2/3" required>
+	
+						<span class="text-xl font-semibold mt-5 mb-2 text-center">Информация о товаре (необязательно)</span>
+	
+						<label for="itemSelect" class="text-xs font-medium text-gray-300 w-100 md:w-2/3 self-center">Интересующий Вас товар</label>
+						<select name="items" id="itemSelect" class="mb-2 outline outline-2 outline-gray-200 rounded-sm px-3 py-2 self-center w-full md:w-2/3">
+							<option value="">Название товара</option>
+							<option value="gotland">Подвесной камин "Готланд"</option>
+							<option value="apple">Подвесной камин "Эпл"</option>
+						</select>
+	
+						<label for="itemSize" class="text-xs font-medium text-gray-300 w-100 md:w-2/3 self-center">Размер товара</label>
+						<select name="itemSize" id="itemSize" class="mb-2 outline outline-2 outline-gray-200 rounded-sm px-3 py-2 self-center w-full md:w-2/3">
+							<option value="">Размер товара</option>
+							<option value="gotland">Диаметр 800 мм</option>
+							<option value="apple">Диаметр 900 мм</option>
+						</select>
+						
+						<button id="submitOrder" class="flex mt-2 px-3 py-2 bg-black text-white rounded-sm w-full md:w-1/3 self-center justify-center">Оставить заявку</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- ШАПКА -->
 		<div
 			class="bg-white md:border-white md:border-b-gray-100 md:border-2 md:sticky md:top-0 md:right-0 z-10 w-full flex flex-col md:flex-row lg:flex-row align-middle justify-between px-3 md:px-20 mb-5 md:mb-0 "
@@ -575,7 +614,7 @@
 					<li class="flex md:px-3 md:py-2 md:me-4 items-center cursor-pointer">
 						<a href="#section6">Контакты</a>
 					</li>
-					<button class="flex mt-2 md:mt-0 px-3 py-2 items-center bg-black text-white">
+					<button class="orderTrigger flex mt-2 md:mt-0 px-3 py-2 items-center bg-black text-white">
 						Заказать
 					</button>
 				</ul>
@@ -590,7 +629,7 @@
 				</p>
 				<button 
 					id="section2"
-					class="
+					class="orderTrigger
 						absolute bottom-5 left-5 md:bottom-10 md:left-10 lg:bottom-14 lg:left-14
 						py-1 px-2 text-sm
 						md:py-2 md:px-4 md:text-xl
@@ -618,7 +657,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -635,7 +674,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -652,7 +691,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -669,7 +708,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -686,7 +725,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -703,7 +742,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -720,7 +759,7 @@
 								<button class="px-3 py-2 hover:outline hover:outline-2 hover:outline-gray-200 w-full mb-2 md:mb-0 md:w-2/4 lg:2/4 rounded-sm md:me-1 lg:me-1 trigger">
 									Подробнее
 								</button>
-								<button class="bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
+								<button class="orderTrigger bg-black px-3 py-2 text-white text-center w-full md:w-2/4 lg:2/4 md:ms-1 lg:ms-1 rounded-sm">
 									Заказать
 								</button>
 							</div>
@@ -742,7 +781,7 @@
 					в нужном размере!
 				</span>
 				<button 
-					class="
+					class="orderTrigger
 						absolute 
 						bottom-3 left-3
 						md:bottom-6 md:left-6
@@ -779,8 +818,8 @@
 						<span class="text-gray-500 font-medium text-sm md:text-lg mb-2">15 сентября 2023</span>
 					</div>
 					<div class="flex items-center justify-center flex-wrap sm:w-full lg:w-2/4">
-						<img class="w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
-						<img class="w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
+						<img class="w-28 h-28 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
+						<img class="w-28 h-28 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
 					</div>
 				</div>
 				<!-- Отзыв 2 -->
@@ -799,8 +838,8 @@
 						<span class="text-gray-500 font-medium text-sm md:text-lg mb-2">15 сентября 2023</span>
 					</div>
 					<div class="flex items-center justify-center flex-wrap sm:w-full lg:w-2/4">
-						<img class="w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
-						<img class="w-20 h-20 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
+						<img class="w-28 h-28 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
+						<img class="w-28 h-28 md:w-30 md:h-30 lg:w-40 lg:h-40 object-contain me-2 mb-2" src="./public/images/image4.png" alt="fireplace">
 					</div>
 				</div>
 			</div>
@@ -845,7 +884,7 @@
 		<section id="section6" class="sm:h-1/3 md:h-1/3 lg:h-1/4 px-0 mt-10">
 			<div class="bg-stone-200 p-10 flex-col justify-items-center px-20 md:px-80">
 				<div class="flex flex-col md:flex-row mb-3">
-					<div class="flex flex-col w-2/4">
+					<div class="flex flex-col md:w-2/4">
 						<div class="flex mb-2">
 							<img
 								class="flex items-center h-8 w-8"
@@ -856,12 +895,12 @@
 						</div>
 						<span class="text-xs mb-3 md:mb-0">Уникальные и стильные подвесные камины собственного производства</span>
 					</div>
-					<div class="flex flex-col w-1/4">
+					<div class="flex flex-col md:w-1/4">
 						<span class="text-sm mb-1 text-zinc-500">Главная</span>
 						<span class="text-sm mb-1 text-zinc-500">Каталог</span>
 						<span class="text-sm text-zinc-500 mb-1 md:mb-0">Отзывы</span>
 					</div>
-					<div class="flex flex-col w-1/4">
+					<div class="flex flex-col md:w-1/4">
 						<span class="text-sm mb-1 text-zinc-500">Доставка и оплата</span>
 						<span class="text-sm text-zinc-500">Контакты</span>
 					</div>
