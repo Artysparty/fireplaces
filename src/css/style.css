@@ -39,7 +39,7 @@ body {
 }
 
 .main {
-	background-image: url("./images/image1.png");
+	background-image: url("../../public/images/image1.png");
 }
 
 .main-header {
@@ -73,7 +73,7 @@ body {
 }
 
 .no-item-found {
-	background-image: url("./images/image6.png");
+	background-image: url("../../public/images/image6.png");
 }
 
 .modalBackground {
