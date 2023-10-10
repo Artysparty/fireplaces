@@ -115,7 +115,6 @@ modalBackground8.addEventListener("click", function (event) {
       }
   }
 });
-// const modalActive = document.getElementsByClassName("modalActive")[0];
 
 function bodyMargin() {
   bodyElementHTML.style.marginRight = "-" + scrollbarWidth + "px";
@@ -126,7 +125,6 @@ modalTrigger1.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose1.addEventListener("click", function () {
   modalBackground1.style.display = "none";
@@ -149,7 +147,6 @@ modalTrigger2.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose2.addEventListener("click", function () {
   modalBackground2.style.display = "none";
@@ -172,7 +169,6 @@ modalTrigger3.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose3.addEventListener("click", function () {
   modalBackground3.style.display = "none";
@@ -195,7 +191,6 @@ modalTrigger4.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose4.addEventListener("click", function () {
   modalBackground4.style.display = "none";
@@ -218,7 +213,6 @@ modalTrigger5.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose5.addEventListener("click", function () {
   modalBackground5.style.display = "none";
@@ -241,7 +235,6 @@ modalTrigger6.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose6.addEventListener("click", function () {
   modalBackground6.style.display = "none";
@@ -264,7 +257,6 @@ modalTrigger7.addEventListener("click", function () {
   if (windowInnerWidth >= 1366) {
       bodyMargin();
   }
-  // modalActive.style.left = "calc(50% - " + (675 - scrollbarWidth / 2) + "px)";
 });
 modalClose7.addEventListener("click", function () {
   modalBackground7.style.display = "none";
@@ -280,3 +272,26 @@ modalBackground7.addEventListener("click", function (event) {
       }
   }
 });
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+
+  fetch('../../public/send_form.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams(new FormData(form)).toString(),
+  })
+    .then((response) => response.text())
+    .then((data) => {
+      // console.log(data);
+    })
+    .catch((error) => {
+      console.error('Ошибка при отправке формы:', error);
+    });
+}
+
+const form = document.querySelector('form');
+form.addEventListener('submit', handleSubmit);
